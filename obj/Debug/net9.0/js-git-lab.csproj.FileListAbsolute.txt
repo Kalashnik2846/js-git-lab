@@ -1,0 +1,15 @@
+C:\Users\Tatyana\js-git-lab\bin\Debug\net9.0\js-git-lab.exe
+C:\Users\Tatyana\js-git-lab\bin\Debug\net9.0\js-git-lab.deps.json
+C:\Users\Tatyana\js-git-lab\bin\Debug\net9.0\js-git-lab.runtimeconfig.json
+C:\Users\Tatyana\js-git-lab\bin\Debug\net9.0\js-git-lab.dll
+C:\Users\Tatyana\js-git-lab\bin\Debug\net9.0\js-git-lab.pdb
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.AssemblyInfoInputs.cache
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.AssemblyInfo.cs
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.csproj.CoreCompileInputs.cache
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.sourcelink.json
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.dll
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\refint\js-git-lab.dll
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.pdb
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\js-git-lab.genruntimeconfig.cache
+C:\Users\Tatyana\js-git-lab\obj\Debug\net9.0\ref\js-git-lab.dll
