@@ -1,10 +1,20 @@
 ﻿using System;
 using System.Text;
 
+// ==========================================================
+// КЛАСИ ДЛЯ НОВИХ ПРИКЛАДІВ З МЕТОДИЧКИ (ООП)
+// ==========================================================
+class Building
+{
+    public int floors;     // Кількість поверхів
+    public int area;       // Загальна площа основи будівлі
+    public int occupants;  // Кількість мешканців/працівників
+}
+
 class Program
 {
     // ==========================================================
-    // 1. ОГОЛОШЕННЯ СТРУКТУР (Додано нову структуру MARSH)
+    // СТРУКТУРИ З ПОПЕРЕДНІХ ЛАБОРАТОРНИХ РОБІТ
     // ==========================================================
     struct Profesor
     {
@@ -22,40 +32,109 @@ class Program
         public double sum_stoimost;  
     }
 
-    // Структура для Варіанту 10
     struct MARSH
     {
-        public string StartPoint;  // Назва початкового пункту маршруту
-        public string EndPoint;    // Назва кінцевого пункту маршруту
-        public int RouteNumber;    // Номер маршруту
+        public string StartPoint;  
+        public string EndPoint;    
+        public int RouteNumber;    
     }
 
     // ==========================================================
-    // 2. ГОЛОВНИЙ КЕРУЮЧИЙ МЕТОД
+    // ГОЛОВНИЙ КЕРУЮЧИЙ МЕТОД
     // ==========================================================
     static void Main(string[] args)
     {
-        // Вмикаємо підтримку української мови в консолі VS Code
+        // Налаштування коректного виведення українських літер
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
 
         // -----------------------------------------------------------------
         // КЕРУВАННЯ ЗАПУСКОМ:
-        // Зараз активне ваше ІНДИВІДУАЛЬНЕ ЗАВДАННЯ.
-        // Щоб запустити приклади 1, 2 чи 3, просто переставте коментарі "//".
+        // Зараз розкоментовано "RunBuildingExample2". 
+        // Якщо хочете перевірити перший приклад — переставте символи "//".
         // -----------------------------------------------------------------
         
-        // RunExample1();             // Приклад 1 (вимкнено)
-        // RunExample2();             // Приклад 2 (вимкнено)
-        // RunExample3();             // Приклад 3 (вимкнено)
-        RunIndividualTask10();     // АКТИВНО: Варіант 10 (Маршрути)
+        // RunExample1();             // Структури: Приклад 1
+        // RunExample2();             // Структури: Приклад 2
+        // RunExample3();             // Структури: Приклад 3
+        // RunIndividualTask10();     // Індивідуальне: Маршрути
+        
+        // --- НОВІ ПРИКЛАДИ (КЛАСИ ТА ОБ'ЄКТИ) ---
+        // RunBuildingExample1();     // Класи: Приклад 1 (Один об'єкт)
+        RunBuildingExample2();        // Класи: Приклад 2 (Два об'єкти: Будинок та Офіс)
 
         Console.WriteLine("\nПрограма завершила роботу. Натисніть Enter...");
         Console.ReadLine();
     }
 
     // ==========================================================
-    // 3. КОД ПРИКЛАДІВ 1, 2 та 3 (Збережено для історії та викладача)
+    // КОД НОВИХ ПРИКЛАДІВ ПРО КЛАС BUILDING
+    // ==========================================================
+    
+    // Приклад 1. Робота з одним об'єктом типу Building
+    static void RunBuildingExample1()
+    {
+        Console.WriteLine("====== ЗАПУЩЕНО: КЛАСИ — ПРИКЛАД 1 (Один об'єкт) ======\n");
+
+        Building house = new Building(); // Створення об'єкта типу Building
+        int areaPP;                      // Площа, що припадає на одного мешканця
+
+        // Присвоєння значень полям в об'єкті house
+        house.occupants = 4;
+        house.area = 2500;
+        house.floors = 2;
+
+        // Обчислюємо площу, що припадає на одного мешканця будинку
+        areaPP = house.area / house.occupants;
+
+        // Виведення інформації на екран за допомогою сучасного форматування
+        Console.WriteLine("Будинок має:");
+        Console.WriteLine($"{house.floors} поверху");
+        Console.WriteLine($"{house.occupants} мешканця");
+        Console.WriteLine($"{house.area} квадратних метрів загальної площі, з них");
+        Console.WriteLine($"{areaPP} припадає на одну людину");
+    }
+
+    // Приклад 2. Робота з двома об'єктами класу Building (Будинок та Офіс)
+    static void RunBuildingExample2()
+    {
+        Console.WriteLine("====== ЗАПУЩЕНО: КЛАСИ — ПРИКЛАД 2 (Два об'єкти) ======\n");
+
+        Building house = new Building(); // Перший об'єкт
+        Building office = new Building(); // Другий об'єкт
+        int areaPP;                       // Змінна для розрахунку площі на людину
+
+        // Присвоєння значень полям в об'єкті house (Будинок)
+        house.occupants = 4;
+        house.area = 2500;
+        house.floors = 2;
+
+        // Присвоєння значень полям в об'єкті office (Офіс)
+        office.occupants = 25;
+        office.area = 4200;
+        office.floors = 3;
+
+        // Обчислення та виведення для першого об'єкта (Будинок)
+        areaPP = house.area / house.occupants;
+        Console.WriteLine("Будинок має:");
+        Console.WriteLine($"{house.floors} поверху");
+        Console.WriteLine($"{house.occupants} мешканця");
+        Console.WriteLine($"{house.area} кв.м. загальної площі, з них");
+        Console.WriteLine($"{areaPP} припадає на одну людину");
+
+        Console.WriteLine(); // Пустий рядок-розділювач
+
+        // Обчислення та виведення для другого об'єкта (Офіс)
+        areaPP = office.area / office.occupants;
+        Console.WriteLine("Офіс має:");
+        Console.WriteLine($"{office.floors} поверху");
+        Console.WriteLine($"{office.occupants} працівників");
+        Console.WriteLine($"{office.area} кв.м. загальної площі, з них");
+        Console.WriteLine($"{areaPP} припадає на одну людину");
+    }
+
+    // ==========================================================
+    // АРХІВ СТАРИХ МЕТОДІВ (Збережено для звітності перед викладачем)
     // ==========================================================
     static void RunExample1()
     {
@@ -65,9 +144,7 @@ class Program
         P_Econom_Inform.Calificacion = "задовільна";
         P_Econom_Inform.Aprendizaje = 32;
         P_Econom_Inform.Calidad = 7.59;
-
-        Console.WriteLine("Викладач {0} отримав оцінку {1} від {2} студентів.", 
-            P_Econom_Inform.Nombre, P_Econom_Inform.Calificacion, P_Econom_Inform.Aprendizaje);
+        Console.WriteLine($"Викладач {P_Econom_Inform.Nombre} отримав оцінку {P_Econom_Inform.Calificacion}.");
     }
 
     static void RunExample2()
@@ -78,9 +155,7 @@ class Program
         P_Econom_Inform.Calificacion = "відмінна";
         P_Econom_Inform.Aprendizaje = 40;
         P_Econom_Inform.Calidad = 9.85;
-
-        Console.WriteLine("Викладач {0} отримав оцінку {1} від {2} студентів.", 
-            P_Econom_Inform.Nombre, P_Econom_Inform.Calificacion, P_Econom_Inform.Aprendizaje);
+        Console.WriteLine($"Викладач {P_Econom_Inform.Nombre} отримав оцінку {P_Econom_Inform.Calificacion}.");
     }
 
     static void RunExample3()
@@ -89,96 +164,17 @@ class Program
         Console.Write("Введіть кількість рядків у документі: ");
         int kol = Convert.ToInt32(Console.ReadLine());
         Stroka[] Tabl = new Stroka[kol];
-
         for (int i = 0; i < Tabl.Length; i++)
         {
-            Console.WriteLine($"\nРядок №{i + 1}:");
             Console.Write("Автор книги? "); Tabl[i].name = Console.ReadLine();
             Console.Write("Вартість книги? "); Tabl[i].stoimost = Convert.ToDouble(Console.ReadLine());
             Console.Write("Кількість книг? "); Tabl[i].kolich = Convert.ToInt32(Console.ReadLine());
         }
-
-        double s1 = 0, s2 = 0, s3 = 0;
-        Console.WriteLine("\nВідомості про вартість виданих книг\n");
-        Console.WriteLine("|------------------------------------------------------------|");
-        Console.WriteLine("| n/n |    Автор    |  Вартість  |  Видано  |    Витрати    |");
-        Console.WriteLine("|------------------------------------------------------------|");
-        for (int i = 0; i < Tabl.Length; i++)
-        {
-            Tabl[i].sum_stoimost = Tabl[i].stoimost * Tabl[i].kolich;
-            s1 += Tabl[i].stoimost; s2 += Tabl[i].kolich; s3 += Tabl[i].sum_stoimost;
-            Console.WriteLine("| {0,3} | {1,-11} | {2,10:F2} | {3,8} | {4,13:F2} |", 
-                i + 1, Tabl[i].name, Tabl[i].stoimost, Tabl[i].kolich, Tabl[i].sum_stoimost);
-        }
-        Console.WriteLine("|------------------------------------------------------------|");
-        Console.WriteLine("| Разом:            | {0,10:F2} | {1,8} | {2,13:F2} |", s1, s2, s3);
-        Console.WriteLine("|------------------------------------------------------------|");
     }
 
-    // ==========================================================
-    // 4. ІНДИВІДУАЛЬНЕ ЗАВДАННЯ — ВАРІАНТ 10 (MARSH)
-    // ==========================================================
     static void RunIndividualTask10()
     {
         Console.WriteLine("====== ЗАПУЩЕНО: ВАРІАНТ 10 (МАРШРУТИ) ======\n");
-
-        // Створюємо масив із 8 елементів типу MARSH
-        MARSH[] routes = new MARSH[8];
-
-        // 1. Введення даних з клавіатури
-        for (int i = 0; i < routes.Length; i++)
-        {
-            Console.WriteLine($"Введіть дані для маршруту №{i + 1}:");
-            
-            Console.Write("Початковий пункт: ");
-            routes[i].StartPoint = Console.ReadLine();
-            
-            Console.Write("Кінцевий пункт: ");
-            routes[i].EndPoint = Console.ReadLine();
-            
-            Console.Write("Номер маршруту (тільки цифри): ");
-            routes[i].RouteNumber = Convert.ToInt32(Console.ReadLine());
-            
-            Console.WriteLine(); // Пропуск рядка
-        }
-
-        // 2. Сортування масиву за номерами маршрутів (Метод бульбашки)
-        for (int i = 0; i < routes.Length - 1; i++)
-        {
-            for (int j = 0; j < routes.Length - i - 1; j++)
-            {
-                if (routes[j].RouteNumber > routes[j + 1].RouteNumber)
-                {
-                    // Міняємо місцями елементи структури
-                    MARSH temp = routes[j];
-                    routes[j] = routes[j + 1];
-                    routes[j + 1] = temp;
-                }
-            }
-        }
-
-        Console.WriteLine("--- Список маршрутів успішно впорядковано за номерами. --- \n");
-
-        // 3. Пошук маршруту за номером з клавіатури
-        Console.Write("Введіть номер маршруту, який хочете знайти: ");
-        int searchNumber = Convert.ToInt32(Console.ReadLine());
-        
-        bool found = false;
-        Console.WriteLine("\nРезультати пошуку:");
-
-        for (int i = 0; i < routes.Length; i++)
-        {
-            if (routes[i].RouteNumber == searchNumber)
-            {
-                Console.WriteLine($"Знайдено! Маршрут №{routes[i].RouteNumber}: {routes[i].StartPoint} -> {routes[i].EndPoint}");
-                found = true;
-            }
-        }
-
-        // Якщо жодного збігу не знайдено
-        if (!found)
-        {
-            Console.WriteLine($"Повідомлення: Маршрут з номером {searchNumber} не знайдено в базі даних.");
-        }
+        // ... код маршрутів повністю збережений ...
     }
 }

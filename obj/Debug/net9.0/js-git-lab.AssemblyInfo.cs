@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("js-git-lab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82bb2254ed01d31c8cb070060a12dfac27962571")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d4d8bd7274f34a36a305c50989df7a0f9fdd3a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("js-git-lab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("js-git-lab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
