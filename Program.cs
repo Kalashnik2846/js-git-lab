@@ -3,41 +3,51 @@ using System.Text;
 
 class Program
 {
-    // === СТРУКТУРИ ДЛЯ ВСІХ ЗАВДАНЬ ===
+    // ==========================================
+    // 1. ОГОЛОШЕННЯ СТРУКТУР ДЛЯ ВСІХ ПРИКЛАДІВ
+    // ==========================================
     struct Profesor
     {
-        public string Nombre;       
-        public string Calificacion; 
-        public int Aprendizaje;     
-        public double Calidad;      
+        public string Nombre;       // ПІБ викладача
+        public string Calificacion; // Оцінка студентами
+        public int Aprendizaje;     // Кількість студентів
+        public double Calidad;      // Якість навчання
     }
 
     struct Stroka
     {
-        public string name;          
-        public double stoimost;      
-        public int kolich;           
-        public double sum_stoimost;  
+        public string name;          // Автор книги
+        public double stoimost;      // Вартість однієї книги
+        public int kolich;           // Кількість виданих книг
+        public double sum_stoimost;  // Загальні витрати на автора
     }
 
-    // === ГОЛОВНИЙ КЕРУЮЧИЙ МЕТОД ===
+    // ==========================================
+    // 2. ГОЛОВНИЙ КЕРУЮЧИЙ МЕТОД
+    // ==========================================
     static void Main(string[] args)
     {
-        // Вмикаємо українську мову в терміналі VS Code
+        // Вмикаємо підтримку української мови в консолі
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
 
-        // --- КЕРУВАННЯ ЗАПУСКОМ ---
-        // Приберіть "//" перед тим прикладом, який хочете перевірити:
+        // -----------------------------------------------------------------
+        // КЕРУВАННЯ ЗАПУСКОМ:
+        // Зараз увімкнено Приклад 3. Якщо захочете повернутися до інших,
+        // просто приберіть "//" перед ними та поставте "//" перед RunExample3.
+        // -----------------------------------------------------------------
         
-        RunExample1();   // Зараз активний Приклад 1
-        // RunExample2(); 
-        // RunExample3(); 
+        // RunExample1();   // Приклад 1 (вимкнено)
+        // RunExample2();   // Приклад 2 (вимкнено)
+        RunExample3();      // Приклад 3 (АКТИВНИЙ — Ваша індивідуальна таблиця)
 
-        Console.WriteLine("\nПрограма завершилась. Натисніть Enter...");
+        Console.WriteLine("\nПрограма завершила роботу. Натисніть Enter...");
+        Console.ReadLine();
     }
 
-    // === ПРИКЛАД №1 ===
+    // ==========================================
+    // 3. КОД ПРИКЛАДУ №1
+    // ==========================================
     static void RunExample1()
     {
         Console.WriteLine("====== ЗАПУЩЕНО: ПРИКЛАД 1 ======\n");
@@ -50,15 +60,19 @@ class Program
 
         Console.WriteLine("Викладач {0} отримав оцінку {1} від {2} студентів.", 
             P_Econom_Inform.Nombre, P_Econom_Inform.Calificacion, P_Econom_Inform.Aprendizaje);
+        
         Console.WriteLine("Якість його навчання оцінено у {0} балів.", P_Econom_Inform.Calidad);
     }
 
-    // === ПРИКЛАД №2 ===
+    // ==========================================
+    // 4. КОД ПРИКЛАДУ №2
+    // ==========================================
     static void RunExample2()
     {
         Console.WriteLine("====== ЗАПУЩЕНО: ПРИКЛАД 2 ======\n");
 
         Profesor P_Econom_Inform = new Profesor();
+        
         P_Econom_Inform.Nombre = "Браткевич В'ячеслав";
         P_Econom_Inform.Calificacion = "відмінна";
         P_Econom_Inform.Aprendizaje = 40;
@@ -66,38 +80,63 @@ class Program
 
         Console.WriteLine("Викладач {0} отримав оцінку {1} від {2} студентів.", 
             P_Econom_Inform.Nombre, P_Econom_Inform.Calificacion, P_Econom_Inform.Aprendizaje);
+        
+        Console.WriteLine("Якість його навчання оцінено у {0} балів.", P_Econom_Inform.Calidad);
     }
 
-    // === ПРИКЛАД №3 ===
+    // ==========================================
+    // 5. КОД ПРИКЛАДУ №3 (Відомості про книги)
+    // ==========================================
     static void RunExample3()
     {
-        Console.WriteLine("====== ЗАПУЩЕНО: ПРИКЛАД 3 (Таблиця) ======\n");
+        Console.WriteLine("====== ЗАПУЩЕНО: ПРИКЛАД 3 (Відомості про книги) ======\n");
 
-        Stroka[] Tabl = new Stroka[3];
+        Console.Write("Введіть кількість рядків у документі: ");
+        int kol = Convert.ToInt32(Console.ReadLine());
+        
+        Stroka[] Tabl = new Stroka[kol];
 
-        for (int i = 0; i < 3; i++)
+        // 1. Введення даних з клавіатури
+        for (int i = 0; i < Tabl.Length; i++)
         {
-            Console.WriteLine($"Введіть дані для товару №{i + 1}:");
-            Console.Write("Назва товару: ");
+            Console.WriteLine($"\nРядок №{i + 1}:");
+            Console.Write("Автор книги? ");
             Tabl[i].name = Console.ReadLine();
-            Console.Write("Вартість за од. (грн): ");
-            Tabl[i].stoimost = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Кількість: ");
-            Tabl[i].kolich = Convert.ToInt32(Console.ReadLine());
             
-            Tabl[i].sum_stoimost = Tabl[i].stoimost * Tabl[i].kolich;
-            Console.WriteLine();
+            Console.Write("Вартість книги? ");
+            Tabl[i].stoimost = Convert.ToDouble(Console.ReadLine());
+            
+            Console.Write("Кількість книг? ");
+            Tabl[i].kolich = Convert.ToInt32(Console.ReadLine());
         }
 
-        Console.WriteLine("-------------------------------------------------------------------------");
-        Console.WriteLine("|   Назва товару   | Вартість за од. |  Кількість  |  Загальна вартість |");
-        Console.WriteLine("-------------------------------------------------------------------------");
-
-        for (int i = 0; i < 3; i++)
+        // 2. Розрахунки та накопичення підсумків для "Разом"
+        double s1 = 0, s2 = 0, s3 = 0;
+        for (int i = 0; i < Tabl.Length; i++)
         {
-            Console.WriteLine("| {0,-16} | {1,15:F2} | {2,11} | {3,18:F2} |", 
-                Tabl[i].name, Tabl[i].stoimost, Tabl[i].kolich, Tabl[i].sum_stoimost);
+            Tabl[i].sum_stoimost = Tabl[i].stoimost * Tabl[i].kolich;
+            
+            s1 += Tabl[i].stoimost;     // Загальна сума цін
+            s2 += Tabl[i].kolich;       // Загальна кількість виданих книг
+            s3 += Tabl[i].sum_stoimost; // Загальні підсумкові витрати
         }
-        Console.WriteLine("-------------------------------------------------------------------------");
+
+        // 3. Виведення шапки таблиці
+        Console.WriteLine("\nВідомості про вартість виданих книг\n");
+        Console.WriteLine("|------------------------------------------------------------|");
+        Console.WriteLine("| n/n |    Автор    |  Вартість  |  Видано  |    Витрати    |");
+        Console.WriteLine("|------------------------------------------------------------|");
+
+        // 4. Заповнення таблиці даними з масиву
+        for (int i = 0; i < Tabl.Length; i++)
+        {
+            Console.WriteLine("| {0,3} | {1,-11} | {2,10:F2} | {3,8} | {4,13:F2} |", 
+                i + 1, Tabl[i].name, Tabl[i].stoimost, Tabl[i].kolich, Tabl[i].sum_stoimost);
+        }
+
+        // 5. Виведення підсумкового рядка "Разом"
+        Console.WriteLine("|------------------------------------------------------------|");
+        Console.WriteLine("| Разом:            | {0,10:F2} | {1,8} | {2,13:F2} |", s1, s2, s3);
+        Console.WriteLine("|------------------------------------------------------------|");
     }
 }
