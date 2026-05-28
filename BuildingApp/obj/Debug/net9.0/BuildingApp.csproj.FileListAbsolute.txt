@@ -1,0 +1,15 @@
+C:\Users\Tatyana\js-git-lab\BuildingApp\bin\Debug\net9.0\BuildingApp.exe
+C:\Users\Tatyana\js-git-lab\BuildingApp\bin\Debug\net9.0\BuildingApp.deps.json
+C:\Users\Tatyana\js-git-lab\BuildingApp\bin\Debug\net9.0\BuildingApp.runtimeconfig.json
+C:\Users\Tatyana\js-git-lab\BuildingApp\bin\Debug\net9.0\BuildingApp.dll
+C:\Users\Tatyana\js-git-lab\BuildingApp\bin\Debug\net9.0\BuildingApp.pdb
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.AssemblyInfoInputs.cache
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.AssemblyInfo.cs
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.csproj.CoreCompileInputs.cache
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.sourcelink.json
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.dll
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\refint\BuildingApp.dll
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.pdb
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\BuildingApp.genruntimeconfig.cache
+C:\Users\Tatyana\js-git-lab\BuildingApp\obj\Debug\net9.0\ref\BuildingApp.dll
